@@ -27,7 +27,7 @@ void imprimir_valores_ft(float *vetor_equipamento, int numero_elementos_do_vetor
 main()
 {
 
-    FILE *fr, *fw;
+    FILE *fr;
 
     // variavel de captura do arquivo a ser lido
      int   ch;  
@@ -71,8 +71,10 @@ main()
 
 
 
+    char caminho[] = "C:\\Users\\0330527\\Documents\\Novos materiais sage\\Arquivos\\abt\\ucs1\\2020\\01\\01\\arqs\\jan0120.pas";
 
-    fr = fopen("dez0120.pas","r");
+    //fr = fopen("C:\\Users\\0330527\\Documents\\Novos materiais sage\\Arquivos\\abt\\ucs1\\2020\\01\\01\\arqs\\jan0120.pas","r");
+    fr = fopen(caminho,"r");
 
 
     if(fr == NULL)
@@ -82,17 +84,11 @@ main()
         exit(1);
     }
 
-    fw = fopen("resultado.txt","w");
 
-    if(fw == NULL)
-    {
-        printf("ERRO2\n");
-        system("pause");
-        exit(2);
-    }
 
     while((ch=fgetc(fr)) != EOF)
     {
+        
         /*================================================*/
         // regiao de caputura do lixo de arquivo, 2 linhas.
 
@@ -102,7 +98,6 @@ main()
         } // end if
 
         /*================================================*/
-     
 
 
 
@@ -267,7 +262,7 @@ main()
 
 
     fclose(fr);
-    fclose(fw);
+    
 
 
 

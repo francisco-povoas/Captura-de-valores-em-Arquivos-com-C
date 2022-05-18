@@ -68,54 +68,6 @@ strcat(caminho_principal,barra_invertida); // "C:\\Users\\0330527\\Documents\\No
 /*=====================================*/
 
 
-/*variaveis do programa de captura*/
-
-    FILE *fr, *fw;
-
-    // variavel de captura do arquivo a ser lido
-     int   ch;  
-    
-    // variavel de contagem duas primeiras linhas, sanando lixo de arquivo
-     int   count1 = 0;
-
-     // variavel percorre countagem do arquivo
-     int   count2 = 1;
-
-     //variavel que captura a linha onde o equipamento desejado se encontra
-     int   count_equip = 0;
-
-     // variavel que captura a linha onde começa a mostra a hora 00:00:00
-     int   count_h_inicial = 0;
-
-     // variavel que sempre irá correr nos resultados após cada 'h'..., de modo a encontrar o valor de count_equip
-     int   count_valores = 1;
-
-   //  variavel que será atualizando de acordo com os resultados encontrados, de modo a entrar ou sair de determinados if's
-     int   validando_captura = 0;
-
-
-     register int i = 0,
-                  j = 0; // percorre o vetor Valores_Equipamento, 
-    
-
-    // captura de equipamento
-     char  Equipamento_guardando[tam_caract]; // guarda conteudo de cada linha 
-     char  Equipamento_interesse[tam_caract] = "ABT_LTCNO_HZ"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
-     
-
-    // captura de h 00:00:00
-     char  Hora_inicio_guardando[tam_caract]; 
-     char  Hora_inicio_interesse[tam_caract] = "h 00:00:00";
-
-
-     float  Valores_Equipamento[tam_caract] ; // valores para comparacao futura max e min
-     char   Valores_Equipamento_guardando[tam_caract] ; // Armazena valores do equipamento de interesse
-    
-
-
-/*================================*/
-
-
 
 
 
@@ -171,9 +123,6 @@ register int i,z; // faz controle do dia atual do mes
 
 
     tamanho_dia_string = strlen(dia_string); // usado para resetar a variavel dia_string a cada loop de dia posteriormente
-
-
-    
 
 
 
@@ -421,22 +370,11 @@ register int i,z; // faz controle do dia atual do mes
                 // nesse momento caminho_principal possui condicoes de abrir no fopen de captura
                 // passar captura aqui
 
-                for(z=0;z<=strlen(caminho_principal);z++)
-                {
-                printf("%c",caminho_principal[z]);
-                }
+                printf("%d\n",strlen(caminho_principal));
+                printf("%s\n",caminho_principal);
+
 
                 printf("\n");
-
-                fr = fopen(caminho_principal,"r");
-
-                if(fr = NULL)
-                {
-                    printf("Erro! arquivo não encontrado para a data; formato DD/MM/AA : %d/%d/%d\n",i,mes_int,ano_int);
-                    system("pause");
-                    // nao colocar exit, só apenas mostrar que deu erro.
-                }
-                /*=================================================*/
 
                 memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                 memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -452,41 +390,6 @@ register int i,z; // faz controle do dia atual do mes
 
     /*termino da regiao 360+ iteracoes*/
     /*==============================================================================================*/
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-
-     resetando a string caminho principal no termino de cada loop para o original --- deu certo
-    memset(caminho_principal + tamanho_caminho_principal_original,'\0',tamanho_caminho_principal);
-
-    // caminho_principal[tamanho_caminho_principal_original+1] = "\0"; // nao funcionou
-
-    tamanho_caminho_principal = strlen(caminho_principal);
-
-    for(i=0; i<tamanho_caminho_principal;i++)
-    {
-        printf("%c",caminho_principal[i]);
-    }
-    printf("\n");
-
-
-    tamanho_caminho_principal = strlen(caminho_principal);
-    printf("caminho principal apos reiniciado = %d\n",tamanho_caminho_principal);
-   ===============================================================================
-   
-   */
-
-
 
 
     system("PAUSE");
