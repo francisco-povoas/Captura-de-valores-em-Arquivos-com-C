@@ -30,7 +30,7 @@ main()
 /*=============================*/
 
     int count_p = 1; // variavel contadora para ponteiros de abertura de arquivos, entrada nos cases
-
+    int maximum;
    // ponteiros do tipo arquivo para abertura do arquivo de leitura 
     FILE *f1,*f2,*f3,*f4,*f5,*f6,*f7,*f8,*f9,*f10,*f11,*f12,*f13,*f14,*f15,*f16,*f17,*f18,*f19,*f20,*f21,*f22,*f23,*f24,*f25,*f26,*f27,*f28,*f29,*f30,*f31;
 
@@ -47,7 +47,26 @@ main()
            count17  =  0,
            count18  =  0,
            count19  =  0,
-           count110 =  0;
+           count110 =  0,
+           count111 =  0,
+           count112 =  0,
+           count113 =  0,
+           count114 =  0,
+           count115 =  0,
+           count116 =  0,
+           count117 =  0,
+           count118 =  0,
+           count119 =  0,
+           count120 =  0,
+           count121 =  0,
+           count122 =  0,
+           count123 =  0,
+           count124 =  0,
+           count125 =  0,
+           count126 =  0,
+           count127 =  0,
+           count128 =  0,
+           count129 =  0;
 
      // variavel percorre countagem do arquivo
      int   count2  =  1,
@@ -59,7 +78,26 @@ main()
            count27 =  1,
            count28 =  1,
            count29 =  1,
-           count210 = 1;
+           count210 = 1,
+           count211 = 1,
+           count212 = 1,
+           count213 = 1,
+           count214 = 1,
+           count215 = 1,
+           count216 = 1,
+           count217 = 1,
+           count218 = 1,
+           count219 = 1,
+           count220 = 1,
+           count221 = 1,
+           count222 = 1,
+           count223 = 1,
+           count224 = 1,
+           count225 = 1,
+           count226 = 1,
+           count227 = 1,
+           count228 = 1,
+           count229 = 1;
 
      //variavel que captura a linha onde o equipamento desejado se encontra
      int   count_equip   =  0,
@@ -71,7 +109,26 @@ main()
            count_equip7  =  0,
            count_equip8  =  0,
            count_equip9  =  0,
-           count_equip10 =  0;
+           count_equip10 =  0,
+           count_equip11 =  0,
+           count_equip12 =  0,
+           count_equip13 =  0,
+           count_equip14 =  0,
+           count_equip15 =  0,
+           count_equip16 =  0,
+           count_equip17 =  0,
+           count_equip18 =  0,
+           count_equip19 =  0,
+           count_equip20 =  0,
+           count_equip21 =  0,
+           count_equip22 =  0,
+           count_equip23 =  0,
+           count_equip24 =  0,
+           count_equip25 =  0,
+           count_equip26 =  0,
+           count_equip27 =  0,
+           count_equip28 =  0,
+           count_equip29 =  0;
 
      // variavel que captura a linha onde começa a mostra a hora 00:00:00
      int   count_h_inicial   =  0,
@@ -83,7 +140,26 @@ main()
            count_h_inicial7  =  0,
            count_h_inicial8  =  0,
            count_h_inicial9  =  0,
-           count_h_inicial10 =  0;
+           count_h_inicial10 =  0,
+           count_h_inicial11 =  0,
+           count_h_inicial12 =  0,
+           count_h_inicial13 =  0,
+           count_h_inicial14 =  0,
+           count_h_inicial15 =  0,
+           count_h_inicial16 =  0,
+           count_h_inicial17 =  0,
+           count_h_inicial18 =  0,
+           count_h_inicial19 =  0,
+           count_h_inicial20 =  0,
+           count_h_inicial21 =  0,
+           count_h_inicial22 =  0,
+           count_h_inicial23 =  0,
+           count_h_inicial24 =  0,
+           count_h_inicial25 =  0,
+           count_h_inicial26 =  0,
+           count_h_inicial27 =  0,
+           count_h_inicial28 =  0,
+           count_h_inicial29 =  0;
 
      // variavel que sempre irá correr nos resultados após cada 'h'..., de modo a encontrar o valor de count_equip
      int   count_valores   =  1,
@@ -95,7 +171,26 @@ main()
            count_valores7  =  1,
            count_valores8  =  1,
            count_valores9  =  1,
-           count_valores10 =  1;
+           count_valores10 =  1,
+           count_valores11 =  1,
+           count_valores12 =  1,
+           count_valores13 =  1,
+           count_valores14 =  1,
+           count_valores15 =  1,
+           count_valores16 =  1,
+           count_valores17 =  1,
+           count_valores18 =  1,
+           count_valores19 =  1,
+           count_valores20 =  1,
+           count_valores21 =  1,
+           count_valores22 =  1,
+           count_valores23 =  1,
+           count_valores24 =  1,
+           count_valores25 =  1,
+           count_valores26 =  1,
+           count_valores27 =  1,
+           count_valores28 =  1,
+           count_valores29 =  1;
 
    //  variavel que será atualizando de acordo com os resultados encontrados, de modo a entrar ou sair de determinados if's
      int   validando_captura   =  0, 
@@ -107,12 +202,31 @@ main()
            validando_captura7  =  0,
            validando_captura8  =  0,
            validando_captura9  =  0,
-           validando_captura10 =  0;
+           validando_captura10 =  0,
+           validando_captura11 =  0,
+           validando_captura12 =  0,
+           validando_captura13 =  0,
+           validando_captura14 =  0,
+           validando_captura15 =  0,
+           validando_captura16 =  0,
+           validando_captura17 =  0,
+           validando_captura18 =  0,
+           validando_captura19 =  0,
+           validando_captura20 =  0,
+           validando_captura21 =  0,
+           validando_captura22 =  0,
+           validando_captura23 =  0,
+           validando_captura24 =  0,
+           validando_captura25 =  0,
+           validando_captura26 =  0,
+           validando_captura27 =  0,
+           validando_captura28 =  0,
+           validando_captura29 =  0;
 
 
-     register int i = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0, i7 = 0, i8 = 0, i9 = 0, i10 = 0,
-                  w, w2,w3,w4,w5,w6,w7,w8, w9,w10,
-                  j = 0, j2=0, j3 =0, j4 = 0, j5 = 0, j6 = 0, j7 = 0, j8 = 0, j9 = 0, j10 = 0; // percorre o vetor Valores_Equipamento, 
+     register int i = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0, i7 = 0, i8 = 0, i9 = 0, i10 = 0, i11 = 0, i12 = 0, i13 = 0, i14 = 0, i15 = 0, i16 = 0, i17 = 0, i18 = 0, i19 = 0, i20 = 0, i21 = 0, i22 = 0, i23 =0, i24 = 0, i25 = 0, i26 = 0, i27 = 0, i28 = 0, i29 = 0,
+                  w, w2,w3,w4,w5,w6,w7,w8, w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20,w21,w22,w23,w24,w25,w26,w27,w28,w29,
+                  j = 0, j2=0, j3 =0, j4 = 0, j5 = 0, j6 = 0, j7 = 0, j8 = 0, j9 = 0, j10 = 0, j11 = 0, j12 = 0, j13 = 0, j14 = 0, j15 = 0, j16 = 0, j17 = 0, j18 = 0, j19 = 0, j20 = 0, j21 = 0, j22 = 0, j23 = 0, j24= 0, j25 = 0, j26 =0, j27 = 0, j28 = 0, j29 = 0; // percorre o vetor Valores_Equipamento, 
     
 
     // captura de equipamento
@@ -125,9 +239,28 @@ main()
            Equipamento_guardando7[tam_caract],
            Equipamento_guardando8[tam_caract],
            Equipamento_guardando9[tam_caract],
-           Equipamento_guardando10[tam_caract];
+           Equipamento_guardando10[tam_caract],
+           Equipamento_guardando11[tam_caract],
+           Equipamento_guardando12[tam_caract],
+           Equipamento_guardando13[tam_caract],
+           Equipamento_guardando14[tam_caract],
+           Equipamento_guardando15[tam_caract],
+           Equipamento_guardando16[tam_caract],
+           Equipamento_guardando17[tam_caract],
+           Equipamento_guardando18[tam_caract],
+           Equipamento_guardando19[tam_caract],
+           Equipamento_guardando20[tam_caract],
+           Equipamento_guardando21[tam_caract],
+           Equipamento_guardando22[tam_caract],
+           Equipamento_guardando23[tam_caract],
+           Equipamento_guardando24[tam_caract],
+           Equipamento_guardando25[tam_caract],
+           Equipamento_guardando26[tam_caract],
+           Equipamento_guardando27[tam_caract],
+           Equipamento_guardando28[tam_caract],
+           Equipamento_guardando29[tam_caract];
 
-     char  Equipamento_interesse[tam_caract] = "ABT_LTCNO_HZ"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
+     char  Equipamento_interesse[tam_caract] = "ABT_LTBIG_KVAB"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
     // posso passar esse Equipamento em modo de leitura do teclado posteriormente. Entrada mais flexivel...
      
 
@@ -141,7 +274,26 @@ main()
            Hora_inicio_guardando7[tam_caract],
            Hora_inicio_guardando8[tam_caract],
            Hora_inicio_guardando9[tam_caract],
-           Hora_inicio_guardando10[tam_caract];
+           Hora_inicio_guardando10[tam_caract],
+           Hora_inicio_guardando11[tam_caract],
+           Hora_inicio_guardando12[tam_caract],
+           Hora_inicio_guardando13[tam_caract],
+           Hora_inicio_guardando14[tam_caract],
+           Hora_inicio_guardando15[tam_caract],
+           Hora_inicio_guardando16[tam_caract],
+           Hora_inicio_guardando17[tam_caract],
+           Hora_inicio_guardando18[tam_caract],
+           Hora_inicio_guardando19[tam_caract],
+           Hora_inicio_guardando20[tam_caract],
+           Hora_inicio_guardando21[tam_caract],
+           Hora_inicio_guardando22[tam_caract],
+           Hora_inicio_guardando23[tam_caract],
+           Hora_inicio_guardando24[tam_caract],
+           Hora_inicio_guardando25[tam_caract],
+           Hora_inicio_guardando26[tam_caract],
+           Hora_inicio_guardando27[tam_caract],
+           Hora_inicio_guardando28[tam_caract],
+           Hora_inicio_guardando29[tam_caract];
 
 
 
@@ -158,7 +310,26 @@ main()
             Valores_Equipamento7[tam_caract],
             Valores_Equipamento8[tam_caract],
             Valores_Equipamento9[tam_caract],
-            Valores_Equipamento10[tam_caract];
+            Valores_Equipamento10[tam_caract],
+            Valores_Equipamento11[tam_caract],
+            Valores_Equipamento12[tam_caract],
+            Valores_Equipamento13[tam_caract],
+            Valores_Equipamento14[tam_caract],
+            Valores_Equipamento15[tam_caract],
+            Valores_Equipamento16[tam_caract],
+            Valores_Equipamento17[tam_caract],
+            Valores_Equipamento18[tam_caract],
+            Valores_Equipamento19[tam_caract],
+            Valores_Equipamento20[tam_caract],
+            Valores_Equipamento21[tam_caract],
+            Valores_Equipamento22[tam_caract],
+            Valores_Equipamento23[tam_caract],
+            Valores_Equipamento24[tam_caract],
+            Valores_Equipamento25[tam_caract],
+            Valores_Equipamento26[tam_caract],
+            Valores_Equipamento27[tam_caract],
+            Valores_Equipamento28[tam_caract],
+            Valores_Equipamento29[tam_caract];
 
 
      char   Valores_Equipamento_guardando[tam_caract],
@@ -170,7 +341,26 @@ main()
             Valores_Equipamento_guardando7[tam_caract],
             Valores_Equipamento_guardando8[tam_caract],
             Valores_Equipamento_guardando9[tam_caract],
-            Valores_Equipamento_guardando10[tam_caract];
+            Valores_Equipamento_guardando10[tam_caract],
+            Valores_Equipamento_guardando11[tam_caract],
+            Valores_Equipamento_guardando12[tam_caract],
+            Valores_Equipamento_guardando13[tam_caract],
+            Valores_Equipamento_guardando14[tam_caract],
+            Valores_Equipamento_guardando15[tam_caract],
+            Valores_Equipamento_guardando16[tam_caract],
+            Valores_Equipamento_guardando17[tam_caract],
+            Valores_Equipamento_guardando18[tam_caract],
+            Valores_Equipamento_guardando19[tam_caract],
+            Valores_Equipamento_guardando20[tam_caract],
+            Valores_Equipamento_guardando21[tam_caract],
+            Valores_Equipamento_guardando22[tam_caract],
+            Valores_Equipamento_guardando23[tam_caract],
+            Valores_Equipamento_guardando24[tam_caract],
+            Valores_Equipamento_guardando25[tam_caract],
+            Valores_Equipamento_guardando26[tam_caract],
+            Valores_Equipamento_guardando27[tam_caract],
+            Valores_Equipamento_guardando28[tam_caract],
+            Valores_Equipamento_guardando29[tam_caract];
 
 
 /*=============================*/
@@ -654,6 +844,7 @@ register int z; // faz controle do dia atual do mes
 
 
                     valor_max_min_equipamento(&Valores_Equipamento,j);
+                    
                     fclose(f1);
 
                 
@@ -1864,79 +2055,2575 @@ register int z; // faz controle do dia atual do mes
                     count_p++;
                     break;
                 case 11:
-                    printf("ok11\n");
+                            f11 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f11 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch11=fgetc(f11)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch11 == 0x0A) && (count111 < 2)) 
+                                {
+                                count111++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count111 == 2) && (validando_captura11 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch11 == 0x0A)
+                                    {   
+                                        count211++;      
+                                        w11 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando11[w11] = ch11; 
+                                        w11++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando11,Equipamento_interesse))
+                                    {
+                                        count_equip11 = count211;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura11 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura11 == 1)
+                                {
+
+                                    if(ch11 == 0x0A)
+                                    {   
+                                        count211++;      
+                                        w11 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando11[w11] = ch11; 
+                                        w11++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando11,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial11 = count211;
+                                        validando_captura11 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura11 == 2)
+                                {
+
+                                    if((count_valores11 < count_equip11) && (ch11 == 0x0A))
+                                    {
+                                        count_valores11++;
+                                        count211++;    
+                                    } // end if
+                                    else if((count_valores11 == count_equip11) && ch11!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando11[w11] = ch11; 
+                                        w11++;
+                                    } // end else if
+                                    else if((count_valores11 == count_equip11) && (ch11 == 0x0A)) 
+                                    {
+                                        float aux11 = atof(Valores_Equipamento_guardando11);
+                                        Valores_Equipamento11[j11] = aux11;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j11++;
+                                        count_valores11++; 
+                                        count211++;
+                                        w11=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores11 > count_equip11) && (count_valores11 < count_h_inicial11) && (ch11 == 0x0A)) 
+                                    {
+                                        count_valores11++;
+                                        count211++;
+                                    } // end else if
+
+                                    else if((count_valores11 == count_h_inicial11) && (ch11 = 0x0A))
+                                    {
+                                        count_valores11 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento11,j11);
+                            fclose(f11);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 12:
-                    printf("ok12\n");
+                    
+                            f12 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f12 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch12=fgetc(f12)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch12 == 0x0A) && (count112 < 2)) 
+                                {
+                                count112++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count112 == 2) && (validando_captura12 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch12 == 0x0A)
+                                    {   
+                                        count212++;      
+                                        w12 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando12[w12] = ch12; 
+                                        w12++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando12,Equipamento_interesse))
+                                    {
+                                        count_equip12 = count212;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura12 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura12 == 1)
+                                {
+
+                                    if(ch12 == 0x0A)
+                                    {   
+                                        count212++;      
+                                        w12 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando12[w12] = ch12; 
+                                        w12++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando12,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial12 = count212;
+                                        validando_captura12 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura12 == 2)
+                                {
+
+                                    if((count_valores12 < count_equip12) && (ch12 == 0x0A))
+                                    {
+                                        count_valores12++;
+                                        count212++;    
+                                    } // end if
+                                    else if((count_valores12 == count_equip12) && ch12!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando12[w12] = ch12; 
+                                        w12++;
+                                    } // end else if
+                                    else if((count_valores12 == count_equip12) && (ch12 == 0x0A)) 
+                                    {
+                                        float aux12 = atof(Valores_Equipamento_guardando12);
+                                        Valores_Equipamento12[j12] = aux12;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j12++;
+                                        count_valores12++; 
+                                        count212++;
+                                        w12=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores12 > count_equip12) && (count_valores12 < count_h_inicial12) && (ch12 == 0x0A)) 
+                                    {
+                                        count_valores12++;
+                                        count212++;
+                                    } // end else if
+
+                                    else if((count_valores12 == count_h_inicial12) && (ch12 = 0x0A))
+                                    {
+                                        count_valores12 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento12,j12);
+                            fclose(f12);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
                     count_p++;
                     break;
                 case 13:
-                    printf("ok13\n");
+                    
+                            f13 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f13 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch13=fgetc(f13)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch13 == 0x0A) && (count113 < 2)) 
+                                {
+                                count113++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count113 == 2) && (validando_captura13 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch13 == 0x0A)
+                                    {   
+                                        count213++;      
+                                        w13 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando13[w13] = ch13; 
+                                        w13++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando13,Equipamento_interesse))
+                                    {
+                                        count_equip13 = count213;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura13 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura13 == 1)
+                                {
+
+                                    if(ch13 == 0x0A)
+                                    {   
+                                        count213++;      
+                                        w13 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando13[w13] = ch13; 
+                                        w13++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando13,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial13 = count213;
+                                        validando_captura13 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura13 == 2)
+                                {
+
+                                    if((count_valores13 < count_equip13) && (ch13 == 0x0A))
+                                    {
+                                        count_valores13++;
+                                        count213++;    
+                                    } // end if
+                                    else if((count_valores13 == count_equip13) && ch13!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando13[w13] = ch13; 
+                                        w13++;
+                                    } // end else if
+                                    else if((count_valores13 == count_equip13) && (ch13 == 0x0A)) 
+                                    {
+                                        float aux13 = atof(Valores_Equipamento_guardando13);
+                                        Valores_Equipamento13[j13] = aux13;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j13++;
+                                        count_valores13++; 
+                                        count213++;
+                                        w13=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores13 > count_equip13) && (count_valores13 < count_h_inicial13) && (ch13 == 0x0A)) 
+                                    {
+                                        count_valores13++;
+                                        count213++;
+                                    } // end else if
+
+                                    else if((count_valores13 == count_h_inicial13) && (ch13 = 0x0A))
+                                    {
+                                        count_valores13 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento13,j13);
+                            fclose(f13);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 14:
-                    printf("ok14\n");
+                    
+                            f14 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f14 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch14=fgetc(f14)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch14 == 0x0A) && (count114 < 2)) 
+                                {
+                                count114++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count114 == 2) && (validando_captura14 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch14 == 0x0A)
+                                    {   
+                                        count214++;      
+                                        w14 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando14[w14] = ch14; 
+                                        w14++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando14,Equipamento_interesse))
+                                    {
+                                        count_equip14 = count214;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura14 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura14 == 1)
+                                {
+
+                                    if(ch14 == 0x0A)
+                                    {   
+                                        count214++;      
+                                        w14 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando14[w14] = ch14; 
+                                        w14++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando14,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial14 = count214;
+                                        validando_captura14 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura14 == 2)
+                                {
+
+                                    if((count_valores14 < count_equip14) && (ch14 == 0x0A))
+                                    {
+                                        count_valores14++;
+                                        count214++;    
+                                    } // end if
+                                    else if((count_valores14 == count_equip14) && ch14!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando14[w14] = ch14; 
+                                        w14++;
+                                    } // end else if
+                                    else if((count_valores14 == count_equip14) && (ch14 == 0x0A)) 
+                                    {
+                                        float aux14 = atof(Valores_Equipamento_guardando14);
+                                        Valores_Equipamento14[j14] = aux14;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j14++;
+                                        count_valores14++; 
+                                        count214++;
+                                        w14=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores14 > count_equip14) && (count_valores14 < count_h_inicial14) && (ch14 == 0x0A)) 
+                                    {
+                                        count_valores14++;
+                                        count214++;
+                                    } // end else if
+
+                                    else if((count_valores14 == count_h_inicial14) && (ch14 = 0x0A))
+                                    {
+                                        count_valores14 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento14,j14);
+                            fclose(f14);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
+
                     count_p++;
                     break;
                 case 15:
-                    printf("ok15\n");
+                    
+
+                            f15 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f15 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch15=fgetc(f15)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch15 == 0x0A) && (count115 < 2)) 
+                                {
+                                count115++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count115 == 2) && (validando_captura15 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch15 == 0x0A)
+                                    {   
+                                        count215++;      
+                                        w15 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando15[w15] = ch15; 
+                                        w15++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando15,Equipamento_interesse))
+                                    {
+                                        count_equip15 = count215;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura15 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura15 == 1)
+                                {
+
+                                    if(ch15 == 0x0A)
+                                    {   
+                                        count215++;      
+                                        w15 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando15[w15] = ch15; 
+                                        w15++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando15,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial15 = count215;
+                                        validando_captura15 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura15 == 2)
+                                {
+
+                                    if((count_valores15 < count_equip15) && (ch15 == 0x0A))
+                                    {
+                                        count_valores15++;
+                                        count215++;    
+                                    } // end if
+                                    else if((count_valores15 == count_equip15) && ch15!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando15[w15] = ch15; 
+                                        w15++;
+                                    } // end else if
+                                    else if((count_valores15 == count_equip15) && (ch15 == 0x0A)) 
+                                    {
+                                        float aux15 = atof(Valores_Equipamento_guardando15);
+                                        Valores_Equipamento15[j15] = aux15;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j15++;
+                                        count_valores15++; 
+                                        count215++;
+                                        w15=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores15 > count_equip15) && (count_valores15 < count_h_inicial15) && (ch15 == 0x0A)) 
+                                    {
+                                        count_valores15++;
+                                        count215++;
+                                    } // end else if
+
+                                    else if((count_valores15 == count_h_inicial15) && (ch15 = 0x0A))
+                                    {
+                                        count_valores15 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento15,j15);
+                            fclose(f15);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
+
                     count_p++;
                     break;
                 case 16:
-                    printf("ok16\n");
+                    
+                            f16 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f16 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch16=fgetc(f16)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch16 == 0x0A) && (count116 < 2)) 
+                                {
+                                count116++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count116 == 2) && (validando_captura16 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch16 == 0x0A)
+                                    {   
+                                        count216++;      
+                                        w16 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando16[w16] = ch16; 
+                                        w16++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando16,Equipamento_interesse))
+                                    {
+                                        count_equip16 = count216;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura16 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura16 == 1)
+                                {
+
+                                    if(ch16 == 0x0A)
+                                    {   
+                                        count216++;      
+                                        w16 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando16[w16] = ch16; 
+                                        w16++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando16,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial16 = count216;
+                                        validando_captura16 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura16 == 2)
+                                {
+
+                                    if((count_valores16 < count_equip16) && (ch16 == 0x0A))
+                                    {
+                                        count_valores16++;
+                                        count216++;    
+                                    } // end if
+                                    else if((count_valores16 == count_equip16) && ch16!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando16[w16] = ch16; 
+                                        w16++;
+                                    } // end else if
+                                    else if((count_valores16 == count_equip16) && (ch16 == 0x0A)) 
+                                    {
+                                        float aux16 = atof(Valores_Equipamento_guardando16);
+                                        Valores_Equipamento16[j16] = aux16;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j16++;
+                                        count_valores16++; 
+                                        count216++;
+                                        w16=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores16 > count_equip16) && (count_valores16 < count_h_inicial16) && (ch16 == 0x0A)) 
+                                    {
+                                        count_valores16++;
+                                        count216++;
+                                    } // end else if
+
+                                    else if((count_valores16 == count_h_inicial16) && (ch16 = 0x0A))
+                                    {
+                                        count_valores16 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento16,j16);
+                            fclose(f16);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
+
+
                     count_p++;
                     break;
                 case 17:
-                    printf("ok17\n");
+                    
+                            f17 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f17 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch17=fgetc(f17)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch17 == 0x0A) && (count117 < 2)) 
+                                {
+                                count117++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count117 == 2) && (validando_captura17 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch17 == 0x0A)
+                                    {   
+                                        count217++;      
+                                        w17 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando17[w17] = ch17; 
+                                        w17++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando17,Equipamento_interesse))
+                                    {
+                                        count_equip17 = count217;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura17 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura17 == 1)
+                                {
+
+                                    if(ch17 == 0x0A)
+                                    {   
+                                        count217++;      
+                                        w17 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando17[w17] = ch17; 
+                                        w17++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando17,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial17 = count217;
+                                        validando_captura17 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura17 == 2)
+                                {
+
+                                    if((count_valores17 < count_equip17) && (ch17 == 0x0A))
+                                    {
+                                        count_valores17++;
+                                        count217++;    
+                                    } // end if
+                                    else if((count_valores17 == count_equip17) && ch17!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando17[w17] = ch17; 
+                                        w17++;
+                                    } // end else if
+                                    else if((count_valores17 == count_equip17) && (ch17 == 0x0A)) 
+                                    {
+                                        float aux17 = atof(Valores_Equipamento_guardando17);
+                                        Valores_Equipamento17[j17] = aux17;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j17++;
+                                        count_valores17++; 
+                                        count217++;
+                                        w17=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores17 > count_equip17) && (count_valores17 < count_h_inicial17) && (ch17 == 0x0A)) 
+                                    {
+                                        count_valores17++;
+                                        count217++;
+                                    } // end else if
+
+                                    else if((count_valores17 == count_h_inicial17) && (ch17 = 0x0A))
+                                    {
+                                        count_valores17 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento17,j17);
+                            fclose(f17);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
                     count_p++;
                     break;
                 case 18:
-                    printf("ok18\n");
+                    
+                            f18 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f18 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch18=fgetc(f18)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch18 == 0x0A) && (count118 < 2)) 
+                                {
+                                count118++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count118 == 2) && (validando_captura18 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch18 == 0x0A)
+                                    {   
+                                        count218++;      
+                                        w18 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando18[w18] = ch18; 
+                                        w18++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando18,Equipamento_interesse))
+                                    {
+                                        count_equip18 = count218;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura18 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura18 == 1)
+                                {
+
+                                    if(ch18 == 0x0A)
+                                    {   
+                                        count218++;      
+                                        w18 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando18[w18] = ch18; 
+                                        w18++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando18,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial18 = count218;
+                                        validando_captura18 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura18 == 2)
+                                {
+
+                                    if((count_valores18 < count_equip18) && (ch18 == 0x0A))
+                                    {
+                                        count_valores18++;
+                                        count218++;    
+                                    } // end if
+                                    else if((count_valores18 == count_equip18) && ch18!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando18[w18] = ch18; 
+                                        w18++;
+                                    } // end else if
+                                    else if((count_valores18 == count_equip18) && (ch18 == 0x0A)) 
+                                    {
+                                        float aux18 = atof(Valores_Equipamento_guardando18);
+                                        Valores_Equipamento18[j18] = aux18;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j18++;
+                                        count_valores18++; 
+                                        count218++;
+                                        w18=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores18 > count_equip18) && (count_valores18 < count_h_inicial18) && (ch18 == 0x0A)) 
+                                    {
+                                        count_valores18++;
+                                        count218++;
+                                    } // end else if
+
+                                    else if((count_valores18 == count_h_inicial18) && (ch18 = 0x0A))
+                                    {
+                                        count_valores18 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento18,j18);
+                            fclose(f18);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
+
+
                     count_p++;
                     break;
                 case 19:
-                    printf("ok19\n");
+                    
+
+                            f19 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f19 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch19=fgetc(f19)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch19 == 0x0A) && (count119 < 2)) 
+                                {
+                                count119++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count119 == 2) && (validando_captura19 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch19 == 0x0A)
+                                    {   
+                                        count219++;      
+                                        w19 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando19[w19] = ch19; 
+                                        w19++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando19,Equipamento_interesse))
+                                    {
+                                        count_equip19 = count219;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura19 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura19 == 1)
+                                {
+
+                                    if(ch19 == 0x0A)
+                                    {   
+                                        count219++;      
+                                        w19 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando19[w19] = ch19; 
+                                        w19++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando19,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial19 = count219;
+                                        validando_captura19 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura19 == 2)
+                                {
+
+                                    if((count_valores19 < count_equip19) && (ch19 == 0x0A))
+                                    {
+                                        count_valores19++;
+                                        count219++;    
+                                    } // end if
+                                    else if((count_valores19 == count_equip19) && ch19!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando19[w19] = ch19; 
+                                        w19++;
+                                    } // end else if
+                                    else if((count_valores19 == count_equip19) && (ch19 == 0x0A)) 
+                                    {
+                                        float aux19 = atof(Valores_Equipamento_guardando19);
+                                        Valores_Equipamento19[j19] = aux19;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j19++;
+                                        count_valores19++; 
+                                        count219++;
+                                        w19=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores19 > count_equip19) && (count_valores19 < count_h_inicial19) && (ch19 == 0x0A)) 
+                                    {
+                                        count_valores19++;
+                                        count219++;
+                                    } // end else if
+
+                                    else if((count_valores19 == count_h_inicial19) && (ch19 = 0x0A))
+                                    {
+                                        count_valores19 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento19,j19);
+                            fclose(f19);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
+
+
                     count_p++;
                     break;
                 case 20:
-                    printf("ok20\n");
+                    
+                f20 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f20 == NULL)
+                            {
+                                printf("ERRO5\n");
+                            }
+
+
+                            while((ch20=fgetc(f20)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch20 == 0x0A) && (count120 < 2)) 
+                                {
+                                count120++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count120 == 2) && (validando_captura20 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch20 == 0x0A)
+                                    {   
+                                        count220++;      
+                                        w20 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando20[w20] = ch20; 
+                                        w20++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando20,Equipamento_interesse))
+                                    {
+                                        count_equip20 = count220;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura20 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura20 == 1)
+                                {
+
+                                    if(ch20 == 0x0A)
+                                    {   
+                                        count220++;      
+                                        w20 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando20[w20] = ch20; 
+                                        w20++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando20,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial20 = count220;
+                                        validando_captura20 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura20 == 2)
+                                {
+
+                                    if((count_valores20 < count_equip20) && (ch20 == 0x0A))
+                                    {
+                                        count_valores20++;
+                                        count220++;    
+                                    } // end if
+                                    else if((count_valores20 == count_equip20) && ch20!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando20[w20] = ch20; 
+                                        w20++;
+                                    } // end else if
+                                    else if((count_valores20 == count_equip20) && (ch20 == 0x0A)) 
+                                    {
+                                        float aux20 = atof(Valores_Equipamento_guardando20);
+                                        Valores_Equipamento20[j20] = aux20;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j20++;
+                                        count_valores20++; 
+                                        count220++;
+                                        w20=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores20 > count_equip20) && (count_valores20 < count_h_inicial20) && (ch20 == 0x0A)) 
+                                    {
+                                        count_valores20++;
+                                        count220++;
+                                    } // end else if
+
+                                    else if((count_valores20 == count_h_inicial20) && (ch20 = 0x0A))
+                                    {
+                                        count_valores20 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento20,j20);
+                            fclose(f20);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 21:
-                    printf("ok21\n");
+                    
+                            f21 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f21 == NULL)
+                            {
+                                printf("ERRO21\n");
+                            }
+
+
+                            while((ch21=fgetc(f21)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch21 == 0x0A) && (count121 < 2)) 
+                                {
+                                count121++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count121 == 2) && (validando_captura21 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch21 == 0x0A)
+                                    {   
+                                        count221++;      
+                                        w21 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando21[w21] = ch21; 
+                                        w21++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando21,Equipamento_interesse))
+                                    {
+                                        count_equip21 = count221;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura21 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura21 == 1)
+                                {
+
+                                    if(ch21 == 0x0A)
+                                    {   
+                                        count221++;      
+                                        w21 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando21[w21] = ch21; 
+                                        w21++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando21,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial21 = count221;
+                                        validando_captura21 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura21 == 2)
+                                {
+
+                                    if((count_valores21 < count_equip21) && (ch21 == 0x0A))
+                                    {
+                                        count_valores21++;
+                                        count221++;    
+                                    } // end if
+                                    else if((count_valores21 == count_equip21) && ch21!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando21[w21] = ch21; 
+                                        w21++;
+                                    } // end else if
+                                    else if((count_valores21 == count_equip21) && (ch21 == 0x0A)) 
+                                    {
+                                        float aux21 = atof(Valores_Equipamento_guardando21);
+                                        Valores_Equipamento21[j21] = aux21;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j21++;
+                                        count_valores21++; 
+                                        count221++;
+                                        w21=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores21 > count_equip21) && (count_valores21 < count_h_inicial21) && (ch21 == 0x0A)) 
+                                    {
+                                        count_valores21++;
+                                        count221++;
+                                    } // end else if
+
+                                    else if((count_valores21 == count_h_inicial21) && (ch21 = 0x0A))
+                                    {
+                                        count_valores21 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento21,j21);
+                            fclose(f21);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 22:
-                    printf("ok22\n");
+                    
+                            f22 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f22 == NULL)
+                            {
+                                printf("ERRO22\n");
+                            }
+
+
+                            while((ch22=fgetc(f22)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch22 == 0x0A) && (count122 < 2)) 
+                                {
+                                count122++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count122 == 2) && (validando_captura22 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch22 == 0x0A)
+                                    {   
+                                        count222++;      
+                                        w22 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando22[w22] = ch22; 
+                                        w22++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando22,Equipamento_interesse))
+                                    {
+                                        count_equip22 = count222;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura22 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura22 == 1)
+                                {
+
+                                    if(ch22 == 0x0A)
+                                    {   
+                                        count222++;      
+                                        w22 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando22[w22] = ch22; 
+                                        w22++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando22,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial22 = count222;
+                                        validando_captura22 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura22 == 2)
+                                {
+
+                                    if((count_valores22 < count_equip22) && (ch22 == 0x0A))
+                                    {
+                                        count_valores22++;
+                                        count222++;    
+                                    } // end if
+                                    else if((count_valores22 == count_equip22) && ch22!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando22[w22] = ch22; 
+                                        w22++;
+                                    } // end else if
+                                    else if((count_valores22 == count_equip22) && (ch22 == 0x0A)) 
+                                    {
+                                        float aux22 = atof(Valores_Equipamento_guardando22);
+                                        Valores_Equipamento22[j22] = aux22;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j22++;
+                                        count_valores22++; 
+                                        count222++;
+                                        w22=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores22 > count_equip22) && (count_valores22 < count_h_inicial22) && (ch22 == 0x0A)) 
+                                    {
+                                        count_valores22++;
+                                        count222++;
+                                    } // end else if
+
+                                    else if((count_valores22 == count_h_inicial22) && (ch22 = 0x0A))
+                                    {
+                                        count_valores22 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento22,j22);
+                            fclose(f22);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
                     count_p++;
                     break;
                 case 23:
-                    printf("ok23\n");
+                    
+                            f23 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f23 == NULL)
+                            {
+                                printf("ERRO23\n");
+                            }
+
+
+                            while((ch23=fgetc(f23)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch23 == 0x0A) && (count123 < 2)) 
+                                {
+                                count123++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count123 == 2) && (validando_captura23 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch23 == 0x0A)
+                                    {   
+                                        count223++;      
+                                        w23 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando23[w23] = ch23; 
+                                        w23++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando23,Equipamento_interesse))
+                                    {
+                                        count_equip23 = count223;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura23 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura23 == 1)
+                                {
+
+                                    if(ch23 == 0x0A)
+                                    {   
+                                        count223++;      
+                                        w23 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando23[w23] = ch23; 
+                                        w23++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando23,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial23 = count223;
+                                        validando_captura23 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura23 == 2)
+                                {
+
+                                    if((count_valores23 < count_equip23) && (ch23 == 0x0A))
+                                    {
+                                        count_valores23++;
+                                        count223++;    
+                                    } // end if
+                                    else if((count_valores23 == count_equip23) && ch23!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando23[w23] = ch23; 
+                                        w23++;
+                                    } // end else if
+                                    else if((count_valores23 == count_equip23) && (ch23 == 0x0A)) 
+                                    {
+                                        float aux23 = atof(Valores_Equipamento_guardando23);
+                                        Valores_Equipamento23[j23] = aux23;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j23++;
+                                        count_valores23++; 
+                                        count223++;
+                                        w23=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores23 > count_equip23) && (count_valores23 < count_h_inicial23) && (ch23 == 0x0A)) 
+                                    {
+                                        count_valores23++;
+                                        count223++;
+                                    } // end else if
+
+                                    else if((count_valores23 == count_h_inicial23) && (ch23 = 0x0A))
+                                    {
+                                        count_valores23 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento23,j23);
+                            fclose(f23);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 24:
-                    printf("ok24\n");
+                    
+                            f24 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f24 == NULL)
+                            {
+                                printf("ERRO24\n");
+                            }
+
+
+                            while((ch24=fgetc(f24)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch24 == 0x0A) && (count124 < 2)) 
+                                {
+                                count124++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count124 == 2) && (validando_captura24 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch24 == 0x0A)
+                                    {   
+                                        count224++;      
+                                        w24 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando24[w24] = ch24; 
+                                        w24++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando24,Equipamento_interesse))
+                                    {
+                                        count_equip24 = count224;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura24 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura24 == 1)
+                                {
+
+                                    if(ch24 == 0x0A)
+                                    {   
+                                        count224++;      
+                                        w24 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando24[w24] = ch24; 
+                                        w24++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando24,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial24 = count224;
+                                        validando_captura24 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura24 == 2)
+                                {
+
+                                    if((count_valores24 < count_equip24) && (ch24 == 0x0A))
+                                    {
+                                        count_valores24++;
+                                        count224++;    
+                                    } // end if
+                                    else if((count_valores24 == count_equip24) && ch24!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando24[w24] = ch24; 
+                                        w24++;
+                                    } // end else if
+                                    else if((count_valores24 == count_equip24) && (ch24 == 0x0A)) 
+                                    {
+                                        float aux24 = atof(Valores_Equipamento_guardando24);
+                                        Valores_Equipamento24[j24] = aux24;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j24++;
+                                        count_valores24++; 
+                                        count224++;
+                                        w24=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores24 > count_equip24) && (count_valores24 < count_h_inicial24) && (ch24 == 0x0A)) 
+                                    {
+                                        count_valores24++;
+                                        count224++;
+                                    } // end else if
+
+                                    else if((count_valores24 == count_h_inicial24) && (ch24 = 0x0A))
+                                    {
+                                        count_valores24 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento24,j24);
+                            fclose(f24);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 25:
-                    printf("ok25\n");
+                    
+                            f25 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f25 == NULL)
+                            {
+                                printf("ERRO25\n");
+                            }
+
+
+                            while((ch25=fgetc(f25)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch25 == 0x0A) && (count125 < 2)) 
+                                {
+                                count125++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count125 == 2) && (validando_captura25 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch25 == 0x0A)
+                                    {   
+                                        count225++;      
+                                        w25 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando25[w25] = ch25; 
+                                        w25++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando25,Equipamento_interesse))
+                                    {
+                                        count_equip25 = count225;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura25 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura25 == 1)
+                                {
+
+                                    if(ch25 == 0x0A)
+                                    {   
+                                        count225++;      
+                                        w25 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando25[w25] = ch25; 
+                                        w25++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando25,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial25 = count225;
+                                        validando_captura25 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura25 == 2)
+                                {
+
+                                    if((count_valores25 < count_equip25) && (ch25 == 0x0A))
+                                    {
+                                        count_valores25++;
+                                        count225++;    
+                                    } // end if
+                                    else if((count_valores25 == count_equip25) && ch25!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando25[w25] = ch25; 
+                                        w25++;
+                                    } // end else if
+                                    else if((count_valores25 == count_equip25) && (ch25 == 0x0A)) 
+                                    {
+                                        float aux25 = atof(Valores_Equipamento_guardando25);
+                                        Valores_Equipamento25[j25] = aux25;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j25++;
+                                        count_valores25++; 
+                                        count225++;
+                                        w25=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores25 > count_equip25) && (count_valores25 < count_h_inicial25) && (ch25 == 0x0A)) 
+                                    {
+                                        count_valores25++;
+                                        count225++;
+                                    } // end else if
+
+                                    else if((count_valores25 == count_h_inicial25) && (ch25 = 0x0A))
+                                    {
+                                        count_valores25 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento25,j25);
+                            fclose(f25);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
                     count_p++;
                     break;
                 case 26:
-                    printf("ok26\n");
+                    
+                            f26 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f26 == NULL)
+                            {
+                                printf("ERRO26\n");
+                            }
+
+
+                            while((ch26=fgetc(f26)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch26 == 0x0A) && (count126 < 2)) 
+                                {
+                                count126++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count126 == 2) && (validando_captura26 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch26 == 0x0A)
+                                    {   
+                                        count226++;      
+                                        w26 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando26[w26] = ch26; 
+                                        w26++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando26,Equipamento_interesse))
+                                    {
+                                        count_equip26 = count226;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura26 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura26 == 1)
+                                {
+
+                                    if(ch26 == 0x0A)
+                                    {   
+                                        count226++;      
+                                        w26 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando26[w26] = ch26; 
+                                        w26++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando26,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial26 = count226;
+                                        validando_captura26 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura26 == 2)
+                                {
+
+                                    if((count_valores26 < count_equip26) && (ch26 == 0x0A))
+                                    {
+                                        count_valores26++;
+                                        count226++;    
+                                    } // end if
+                                    else if((count_valores26 == count_equip26) && ch26!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando26[w26] = ch26; 
+                                        w26++;
+                                    } // end else if
+                                    else if((count_valores26 == count_equip26) && (ch26 == 0x0A)) 
+                                    {
+                                        float aux26 = atof(Valores_Equipamento_guardando26);
+                                        Valores_Equipamento26[j26] = aux26;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j26++;
+                                        count_valores26++; 
+                                        count226++;
+                                        w26=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores26 > count_equip26) && (count_valores26 < count_h_inicial26) && (ch26 == 0x0A)) 
+                                    {
+                                        count_valores26++;
+                                        count226++;
+                                    } // end else if
+
+                                    else if((count_valores26 == count_h_inicial26) && (ch26 = 0x0A))
+                                    {
+                                        count_valores26 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento26,j26);
+                            fclose(f26);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
                     count_p++;
                     break;
                 case 27:
-                    printf("ok27\n");
+
+                            f27 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f27 == NULL)
+                            {
+                                printf("ERRO27\n");
+                            }
+
+
+                            while((ch27=fgetc(f27)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch27 == 0x0A) && (count127 < 2)) 
+                                {
+                                count127++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count127 == 2) && (validando_captura27 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch27 == 0x0A)
+                                    {   
+                                        count227++;      
+                                        w27 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando27[w27] = ch27; 
+                                        w27++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando27,Equipamento_interesse))
+                                    {
+                                        count_equip27 = count227;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura27 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura27 == 1)
+                                {
+
+                                    if(ch27 == 0x0A)
+                                    {   
+                                        count227++;      
+                                        w27 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando27[w27] = ch27; 
+                                        w27++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando27,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial27 = count227;
+                                        validando_captura27 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura27 == 2)
+                                {
+
+                                    if((count_valores27 < count_equip27) && (ch27 == 0x0A))
+                                    {
+                                        count_valores27++;
+                                        count227++;    
+                                    } // end if
+                                    else if((count_valores27 == count_equip27) && ch27!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando27[w27] = ch27; 
+                                        w27++;
+                                    } // end else if
+                                    else if((count_valores27 == count_equip27) && (ch27 == 0x0A)) 
+                                    {
+                                        float aux27 = atof(Valores_Equipamento_guardando27);
+                                        Valores_Equipamento27[j27] = aux27;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j27++;
+                                        count_valores27++; 
+                                        count227++;
+                                        w27=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores27 > count_equip27) && (count_valores27 < count_h_inicial27) && (ch27 == 0x0A)) 
+                                    {
+                                        count_valores27++;
+                                        count227++;
+                                    } // end else if
+
+                                    else if((count_valores27 == count_h_inicial27) && (ch27 = 0x0A))
+                                    {
+                                        count_valores27 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento27,j27);
+                            fclose(f27);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
                     count_p++;
                     break;
                 case 28:
-                    printf("ok28\n");
+
+                            f28 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f28 == NULL)
+                            {
+                                printf("ERRO28\n");
+                            }
+
+
+                            while((ch28=fgetc(f28)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch28 == 0x0A) && (count128 < 2)) 
+                                {
+                                count128++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count128 == 2) && (validando_captura28 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch28 == 0x0A)
+                                    {   
+                                        count228++;      
+                                        w28 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando28[w28] = ch28; 
+                                        w28++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando28,Equipamento_interesse))
+                                    {
+                                        count_equip28 = count228;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura28 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura28 == 1)
+                                {
+
+                                    if(ch28 == 0x0A)
+                                    {   
+                                        count228++;      
+                                        w28 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando28[w28] = ch28; 
+                                        w28++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando28,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial28 = count228;
+                                        validando_captura28 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura28 == 2)
+                                {
+
+                                    if((count_valores28 < count_equip28) && (ch28 == 0x0A))
+                                    {
+                                        count_valores28++;
+                                        count228++;    
+                                    } // end if
+                                    else if((count_valores28 == count_equip28) && ch28!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando28[w28] = ch28; 
+                                        w28++;
+                                    } // end else if
+                                    else if((count_valores28 == count_equip28) && (ch28 == 0x0A)) 
+                                    {
+                                        float aux28 = atof(Valores_Equipamento_guardando28);
+                                        Valores_Equipamento28[j28] = aux28;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j28++;
+                                        count_valores28++; 
+                                        count228++;
+                                        w28=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores28 > count_equip28) && (count_valores28 < count_h_inicial28) && (ch28 == 0x0A)) 
+                                    {
+                                        count_valores28++;
+                                        count228++;
+                                    } // end else if
+
+                                    else if((count_valores28 == count_h_inicial28) && (ch28 = 0x0A))
+                                    {
+                                        count_valores28 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento28,j28);
+                            fclose(f28);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
+
                     count_p++;
                     break;
                 case 29:
-                    printf("ok29\n");
+                    
+                            f29 = fopen(caminho_principal,"r");
+                            printf("%s\n",caminho_principal);
+
+                            if(f29 == NULL)
+                            {
+                                printf("ERRO29\n");
+                            }
+
+
+                            while((ch29=fgetc(f29)) != EOF)
+                            {
+                                
+                                /*================================================*/
+                                // regiao de caputura do lixo de arquivo, 2 linhas.
+
+                                if((ch29 == 0x0A) && (count129 < 2)) 
+                                {
+                                count129++; 
+                                } // end if
+
+                                /*================================================*/
+
+                                /*================================================*/
+                                // regiao de caputura do Equipamento desejado
+                                if((count129 == 2) && (validando_captura29 == 0)) // inicio da terceira linha e capturando linha do equipamento de nosso interesse
+                                {
+
+                                    if(ch29 == 0x0A)
+                                    {   
+                                        count229++;      
+                                        w29 = 0;     
+                                    } // end if 
+                                    else 
+                                    {
+                                        Equipamento_guardando29[w29] = ch29; 
+                                        w29++;
+                                    }
+                                
+
+                                    if(strstr(Equipamento_guardando29,Equipamento_interesse))
+                                    {
+                                        count_equip29 = count229;
+                                    //    printf("count_equip = %d\n", count_equip); 
+                                        validando_captura29 = 1;
+                                    } 
+                                    
+                                } // END IF (COUNT 1) == 2 && VALIDANDO CAPTURA == 0 
+                                /*================================================*/   
+
+
+                                /*================================================*/
+                                // Capturando inicio da hora h 00:00:00
+                                if(validando_captura29 == 1)
+                                {
+
+                                    if(ch29 == 0x0A)
+                                    {   
+                                        count229++;      
+                                        w29 = 0; 
+                                    } 
+                                    else 
+                                    {
+                                        Hora_inicio_guardando29[w29] = ch29; 
+                                        w29++;
+                                    }
+
+                                    if(strstr(Hora_inicio_guardando29,Hora_inicio_interesse))
+                                    {
+                                        count_h_inicial29 = count229;
+                                        validando_captura29 = 2;
+                                    } 
+                                } // END IF VALIDANDO CAPTURA == 1
+                                /*================================================*/
+
+
+                                /*================================================*/
+                                // Capturando todos valores do equipamento
+                                if(validando_captura29 == 2)
+                                {
+
+                                    if((count_valores29 < count_equip29) && (ch29 == 0x0A))
+                                    {
+                                        count_valores29++;
+                                        count229++;    
+                                    } // end if
+                                    else if((count_valores29 == count_equip29) && ch29!= 0x0A) 
+                                    {
+                                        Valores_Equipamento_guardando29[w29] = ch29; 
+                                        w29++;
+                                    } // end else if
+                                    else if((count_valores29 == count_equip29) && (ch29 == 0x0A)) 
+                                    {
+                                        float aux29 = atof(Valores_Equipamento_guardando29);
+                                        Valores_Equipamento29[j29] = aux29;
+                                    //  printf("count_valores = %d | count2 = %d  | j = %d \n",count_valores,count2,j);
+
+                                        j29++;
+                                        count_valores29++; 
+                                        count229++;
+                                        w29=0;
+                    
+                                    } // end else if
+
+                                    else if((count_valores29 > count_equip29) && (count_valores29 < count_h_inicial29) && (ch29 == 0x0A)) 
+                                    {
+                                        count_valores29++;
+                                        count229++;
+                                    } // end else if
+
+                                    else if((count_valores29 == count_h_inicial29) && (ch29 = 0x0A))
+                                    {
+                                        count_valores29 = 1;
+                                    }
+
+                                } // end if(validando_captura == 2)
+
+
+                                /*================================================*/
+
+                            } // end while de EOF
+
+                            valor_max_min_equipamento(&Valores_Equipamento29,j29);
+                            fclose(f29);
+
+                        
+
+                            memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
+                            memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
+
+
                     count_p++;
                     break;
                 case 30:
@@ -2000,6 +4687,5 @@ register int k;
 
     //printf("min = %f\n",min);
     printf("max = %f\n",max);
-
 
 } // end funcao valor_minimo_equipamento
