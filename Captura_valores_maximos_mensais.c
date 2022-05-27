@@ -16,6 +16,8 @@
 /* --- Protótipo das funcoes ---*/
 
 void valor_max_min_equipamento(float *vetor_equipamento,int numero_elementos_do_vetor);
+float maximo_mensal(float *vetor_equipamento_valores, int n_elementos_vetor);
+float minimo_mensal(float * vet_equipamento_valores, int n_element_vetor);
 
 /* ========================================== */
 /* --- Variáveis Globais --- */
@@ -30,7 +32,8 @@ main()
 /*=============================*/
 
     int count_p = 1; // variavel contadora para ponteiros de abertura de arquivos, entrada nos cases
-    int maximum;
+    float maximum = 0,minimum = 0;
+    float maximum_aux = 0, minimum_aux = 0;
    // ponteiros do tipo arquivo para abertura do arquivo de leitura 
     FILE *f1,*f2,*f3,*f4,*f5,*f6,*f7,*f8,*f9,*f10,*f11,*f12,*f13,*f14,*f15,*f16,*f17,*f18,*f19,*f20,*f21,*f22,*f23,*f24,*f25,*f26,*f27,*f28,*f29,*f30,*f31;
 
@@ -863,7 +866,11 @@ register int z; // faz controle do dia atual do mes
                     } // end while de EOF
 
 
-                    valor_max_min_equipamento(&Valores_Equipamento,j);
+                    valor_max_min_equipamento(&Valores_Equipamento,j); // irá imprimir o maximo e minimo diario
+
+                    maximum = maximo_mensal(&Valores_Equipamento,j); // captura o maximo diario e coloca em maximum
+                    minimum = minimo_mensal(&Valores_Equipamento,j); // captura o minimo diario e coloca em minimum
+
                     
                     fclose(f1);
 
@@ -998,7 +1005,22 @@ register int z; // faz controle do dia atual do mes
 
                         } // end while de EOF
 
-                        valor_max_min_equipamento(&Valores_Equipamento2,j2);
+                        valor_max_min_equipamento(&Valores_Equipamento2,j2); // imprime os valores maximos e minimos diarios
+
+                        maximum_aux = maximo_mensal(&Valores_Equipamento2,j2); // armazena max diario em aux 
+                        minimum_aux = minimo_mensal(&Valores_Equipamento2,j2); // armazena min diario em aux
+
+                        if(maximum_aux > maximum)
+                        {
+                            maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                        }
+
+                        if(minimum_aux < minimum)
+                        {
+                            minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                        }
+
+
                         fclose(f2);
 
 
@@ -1131,6 +1153,23 @@ register int z; // faz controle do dia atual do mes
                         } // end while de EOF
 
                         valor_max_min_equipamento(&Valores_Equipamento3,j3);
+
+                        maximum_aux = maximo_mensal(&Valores_Equipamento3,j3); // armazena max diario em aux 
+                        minimum_aux = minimo_mensal(&Valores_Equipamento3,j3); // armazena min diario em aux
+
+                        if(maximum_aux > maximum)
+                        {
+                            maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                        }
+
+                        if(minimum_aux < minimum)
+                        {
+                            minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                        }
+
+
+
+
                         fclose(f3);
 
                     
@@ -1264,6 +1303,21 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento4,j4);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento4,j4); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento4,j4); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
                             fclose(f4);
 
                         
@@ -1395,7 +1449,23 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento5,j5);
+                            valor_max_min_equipamento(&Valores_Equipamento5,j5); // imprime max e min diario
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento5,j5); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento5,j5); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
+
                             fclose(f5);
    
 
@@ -1526,7 +1596,21 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento6,j6);
+                            valor_max_min_equipamento(&Valores_Equipamento6,j6); // imprime max e min diario
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento6,j6); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento6,j6); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
                             fclose(f6);
 
                         
@@ -1543,7 +1627,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f7 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO7\n");
                             }
 
 
@@ -1660,6 +1744,21 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento7,j7);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento7,j7); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento7,j7); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
                             fclose(f7);
 
                         
@@ -1672,12 +1771,12 @@ register int z; // faz controle do dia atual do mes
                     break;
                 case 8:
                     
-                    f8 = fopen(caminho_principal,"r");
+                            f8 = fopen(caminho_principal,"r");
                             printf("%s\n",caminho_principal);
 
                             if(f8 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO8\n");
                             }
 
 
@@ -1794,6 +1893,21 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento8,j8);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento8,j8); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento8,j8); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
                             fclose(f8);
 
                         
@@ -1927,6 +2041,20 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento9,j9);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento9,j9); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento9,j9); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+                            
                             fclose(f9);
 
                         
@@ -2061,6 +2189,21 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento10,j10);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento10,j10); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento10,j10); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
                             fclose(f10);
 
                         
@@ -2080,7 +2223,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f11 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO11\n");
                             }
 
 
@@ -2197,6 +2340,20 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento11,j11);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento11,j11); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento11,j11); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
                             fclose(f11);
 
                         
@@ -2215,7 +2372,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f12 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO12\n");
                             }
 
 
@@ -2332,6 +2489,22 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento12,j12);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento12,j12); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento12,j12); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
+
+
                             fclose(f12);
 
                         
@@ -2351,7 +2524,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f13 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO13\n");
                             }
 
 
@@ -2468,6 +2641,20 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento13,j13);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento13,j13); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento13,j13); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
+
                             fclose(f13);
 
                         
@@ -2486,7 +2673,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f14 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO14\n");
                             }
 
 
@@ -2603,6 +2790,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento14,j14);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento14,j14); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento14,j14); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f14);
 
                         
@@ -2741,6 +2941,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento15,j15);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento15,j15); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento15,j15); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f15);
 
                         
@@ -2761,7 +2974,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f16 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO16\n");
                             }
 
 
@@ -2878,6 +3091,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento16,j16);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento16,j16); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento16,j16); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f16);
 
                         
@@ -2899,7 +3125,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f17 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO17\n");
                             }
 
 
@@ -3016,6 +3242,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento17,j17);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento17,j17); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento17,j17); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f17);
 
                         
@@ -3033,7 +3272,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f18 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO18\n");
                             }
 
 
@@ -3150,6 +3389,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento18,j18);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento18,j18); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento18,j18); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f18);
 
                         
@@ -3172,7 +3424,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f19 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO19\n");
                             }
 
 
@@ -3289,6 +3541,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento19,j19);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento19,j19); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento19,j19); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f19);
 
                         
@@ -3304,12 +3569,12 @@ register int z; // faz controle do dia atual do mes
                     break;
                 case 20:
                     
-                f20 = fopen(caminho_principal,"r");
+                            f20 = fopen(caminho_principal,"r");
                             printf("%s\n",caminho_principal);
 
                             if(f20 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO20\n");
                             }
 
 
@@ -3426,6 +3691,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento20,j20);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento20,j20); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento20,j20); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f20);
 
                         
@@ -3561,6 +3839,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento21,j21);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento21,j21); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento21,j21); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f21);
 
                         
@@ -3696,6 +3987,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento22,j22);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento22,j22); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento22,j22); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f22);
 
                         
@@ -3830,6 +4134,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento23,j23);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento23,j23); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento23,j23); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f23);
 
                         
@@ -3965,6 +4282,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento24,j24);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento24,j24); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento24,j24); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f24);
 
                         
@@ -4100,6 +4430,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento25,j25);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento25,j25); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento25,j25); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f25);
 
                         
@@ -4234,6 +4577,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento26,j26);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento26,j26); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento26,j26); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f26);
 
                         
@@ -4368,6 +4724,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento27,j27);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento27,j27); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento27,j27); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f27);
 
                         
@@ -4501,6 +4870,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento28,j28);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento28,j28); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento28,j28); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f28);
 
                         
@@ -4636,6 +5018,18 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento29,j29);
+                            maximum_aux = maximo_mensal(&Valores_Equipamento29,j29); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento29,j29); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f29);
 
                         
@@ -4770,6 +5164,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento30,j30);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento30,j30); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento30,j30); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f30);
 
                         
@@ -4905,6 +5312,19 @@ register int z; // faz controle do dia atual do mes
                             } // end while de EOF
 
                             valor_max_min_equipamento(&Valores_Equipamento31,j31);
+
+                            maximum_aux = maximo_mensal(&Valores_Equipamento31,j31); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento31,j31); // armazena min diario em aux
+
+                            if(maximum_aux > maximum)
+                            {
+                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                            }
+
+                            if(minimum_aux < minimum)
+                            {
+                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            }
                             fclose(f31);
 
                         
@@ -4924,6 +5344,9 @@ register int z; // faz controle do dia atual do mes
             } // end for dias
 
             
+
+            printf("\n\n\n Maximo mensal: %f\n",maximum);
+            printf("Minimimo mensal: %f\n",minimum);
 
 
 
@@ -4966,7 +5389,49 @@ register int k;
 
     } // end for
 
-    //printf("min = %f\n",min);
+    printf("min = %f\n",min);
     printf("max = %f\n",max);
 
 } // end funcao valor_minimo_equipamento
+
+
+float maximo_mensal(float *vetor_equipamento_valores, int n_elementos_vetor)
+{
+
+
+    register int k;
+    float max = vetor_equipamento_valores[1];
+
+    // capturando valor max
+    for(k=1; k < n_elementos_vetor; k++)
+    {
+        if(vetor_equipamento_valores[k] > max)
+        {
+            max = vetor_equipamento_valores[k];
+        }
+  
+    } // end for
+
+    return max;
+
+} // end funcao maximo_mensal
+
+float minimo_mensal(float * vet_equipamento_valores, int n_element_vetor)
+{
+
+    register int k;
+    float min = vet_equipamento_valores[1];
+
+    // capturando valor max
+    for(k=1; k < n_element_vetor; k++)
+    {
+        if(vet_equipamento_valores[k] < min)
+        {
+            min = vet_equipamento_valores[k];
+        }
+  
+    } // end for
+
+    return min;
+
+} // end funcao minimo_mensal
