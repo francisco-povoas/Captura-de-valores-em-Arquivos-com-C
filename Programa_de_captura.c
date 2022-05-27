@@ -57,7 +57,7 @@ main()
 
     // captura de equipamento
      char  Equipamento_guardando[tam_caract]; // guarda conteudo de cada linha 
-     char  Equipamento_interesse[tam_caract] = "ABT_LTBIG_KVAB"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
+     char  Equipamento_interesse[tam_caract] = "AB_LTBIG_HZ"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
      
 
     // captura de h 00:00:00
@@ -73,7 +73,7 @@ main()
 
     //char caminho[] = "C:\\Users\\0330527\\Documents\\Novos materiais sage\\Arquivos\\abt\\ucs1\\2020\\01\\01\\arqs\\jan0120.pas";
 
-    fr = fopen("C:\\Users\\0330527\\Documents\\Novos materiais sage\\Arquivos\\abt\\ucs1\\2020\\01\\15\\arqs\\jan1520.pas","r");
+    fr = fopen("C:\\Users\\0330527\\Documents\\Novos materiais sage\\Arquivos\\abt\\ucs1\\2020\\11\\29\\arqs\\nov2920.pas","r");
     // fr = fopen(caminho,"r");
 
 
