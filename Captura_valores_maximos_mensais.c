@@ -277,7 +277,7 @@ main()
            Equipamento_guardando30[tam_caract],
            Equipamento_guardando31[tam_caract];
 
-     char  Equipamento_interesse[tam_caract] = "ABT_LTBIG_KVAB"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
+     char  Equipamento_interesse[tam_caract] = "AB_LTBIG_MW"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
     // posso passar esse Equipamento em modo de leitura do teclado posteriormente. Entrada mais flexivel...
      
 
@@ -749,7 +749,7 @@ register int z; // faz controle do dia atual do mes
 
                     if(f1 == NULL)
                     {
-                        printf("ERRO1\n");
+                        printf("ERRO: arquivo nao encontrado!\n");
                     }
 
 
@@ -866,10 +866,15 @@ register int z; // faz controle do dia atual do mes
                     } // end while de EOF
 
 
-                    valor_max_min_equipamento(&Valores_Equipamento,j); // irá imprimir o maximo e minimo diario
+                    if(f1 != NULL)
+                    {
+                        valor_max_min_equipamento(&Valores_Equipamento,j); // irá imprimir o maximo e minimo diario
 
-                    maximum = maximo_mensal(&Valores_Equipamento,j); // captura o maximo diario e coloca em maximum
-                    minimum = minimo_mensal(&Valores_Equipamento,j); // captura o minimo diario e coloca em minimum
+                        maximum = maximo_mensal(&Valores_Equipamento,j); // captura o maximo diario e coloca em maximum
+                        minimum = minimo_mensal(&Valores_Equipamento,j); // captura o minimo diario e coloca em minimum
+                    }
+
+
 
                     
                     fclose(f1);
@@ -888,7 +893,7 @@ register int z; // faz controle do dia atual do mes
 
                         if(f2 == NULL)
                         {
-                            printf("ERRO2\n");
+                            printf("ERRO: arquivo nao encontrado!\n");
                         }
 
 
@@ -1005,19 +1010,18 @@ register int z; // faz controle do dia atual do mes
 
                         } // end while de EOF
 
-                        valor_max_min_equipamento(&Valores_Equipamento2,j2); // imprime os valores maximos e minimos diarios
 
-                        maximum_aux = maximo_mensal(&Valores_Equipamento2,j2); // armazena max diario em aux 
-                        minimum_aux = minimo_mensal(&Valores_Equipamento2,j2); // armazena min diario em aux
-
-                        if(maximum_aux > maximum)
+                        if(f2 != NULL)
                         {
-                            maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                        }
+                            
+                            valor_max_min_equipamento(&Valores_Equipamento2,j2); // imprime os valores maximos e minimos diarios
 
-                        if(minimum_aux < minimum)
-                        {
-                            minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
+                            maximum_aux = maximo_mensal(&Valores_Equipamento2,j2); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento2,j2); // armazena min diario em aux
+
+                            (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                            (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
                         }
 
 
@@ -1036,7 +1040,7 @@ register int z; // faz controle do dia atual do mes
 
                         if(f3 == NULL)
                         {
-                            printf("ERRO3\n");
+                            printf("ERRO: arquivo nao encontrado\n");
                         }
 
 
@@ -1152,21 +1156,20 @@ register int z; // faz controle do dia atual do mes
 
                         } // end while de EOF
 
-                        valor_max_min_equipamento(&Valores_Equipamento3,j3);
-
-                        maximum_aux = maximo_mensal(&Valores_Equipamento3,j3); // armazena max diario em aux 
-                        minimum_aux = minimo_mensal(&Valores_Equipamento3,j3); // armazena min diario em aux
-
-                        if(maximum_aux > maximum)
+                        if(f3 != NULL)
                         {
-                            maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                        }
+                            
+                            valor_max_min_equipamento(&Valores_Equipamento3,j3);
 
-                        if(minimum_aux < minimum)
-                        {
-                            minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                        }
+                            maximum_aux = maximo_mensal(&Valores_Equipamento3,j3); // armazena max diario em aux 
+                            minimum_aux = minimo_mensal(&Valores_Equipamento3,j3); // armazena min diario em aux
 
+
+                            (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                            (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                        }
 
 
 
@@ -1186,7 +1189,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f4 == NULL)
                             {
-                                printf("ERRO4\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
 
 
@@ -1302,20 +1305,20 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento4,j4);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento4,j4); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento4,j4); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f4 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento4,j4);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento4,j4); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento4,j4); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
 
 
                             fclose(f4);
@@ -1333,7 +1336,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f5 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -1449,20 +1452,19 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento5,j5); // imprime max e min diario
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento5,j5); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento5,j5); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f5 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento5,j5); // imprime max e min diario
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento5,j5); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento5,j5); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
 
 
 
@@ -1480,7 +1482,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f6 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -1596,20 +1598,21 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento6,j6); // imprime max e min diario
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento6,j6); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento6,j6); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f6 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento6,j6); // imprime max e min diario
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento6,j6); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento6,j6); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
 
                             fclose(f6);
 
@@ -1627,7 +1630,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f7 == NULL)
                             {
-                                printf("ERRO7\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -1743,20 +1746,19 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento7,j7);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento7,j7); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento7,j7); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f7 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                                           
+                                valor_max_min_equipamento(&Valores_Equipamento7,j7);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento7,j7); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento7,j7); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
 
 
                             fclose(f7);
@@ -1776,7 +1778,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f8 == NULL)
                             {
-                                printf("ERRO8\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -1892,25 +1894,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento8,j8);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento8,j8); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento8,j8); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f8 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento8,j8);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento8,j8); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento8,j8); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
 
 
                             fclose(f8);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -1924,7 +1925,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f9 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2040,24 +2041,23 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento9,j9);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento9,j9); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento9,j9); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f9 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
+                                    
+                                valor_max_min_equipamento(&Valores_Equipamento9,j9);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento9,j9); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento9,j9); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
                             }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+
                             
                             fclose(f9);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -2072,7 +2072,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f10 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2188,31 +2188,26 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento10,j10);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento10,j10); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento10,j10); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if( f10 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                                            
+                                valor_max_min_equipamento(&Valores_Equipamento10,j10);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento10,j10); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento10,j10); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
 
 
                             fclose(f10);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
-
 
 
                     count_p++;
@@ -2223,7 +2218,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f11 == NULL)
                             {
-                                printf("ERRO11\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2339,28 +2334,22 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento11,j11);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento11,j11); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento11,j11); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f11 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento11,j11);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento11,j11); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento11,j11); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
 
                             fclose(f11);
 
-                        
-
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
 
                     count_p++;
@@ -2372,7 +2361,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f12 == NULL)
                             {
-                                printf("ERRO12\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2488,31 +2477,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento12,j12);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento12,j12); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento12,j12); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f12 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento12,j12);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento12,j12); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento12,j12); // armazena min diario em aux
 
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
 
 
                             fclose(f12);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
 
                     count_p++;
@@ -2524,7 +2506,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f13 == NULL)
                             {
-                                printf("ERRO13\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2640,20 +2622,22 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento13,j13);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento13,j13); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento13,j13); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f13 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                                            
+                                valor_max_min_equipamento(&Valores_Equipamento13,j13);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento13,j13); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento13,j13); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
+
 
                             fclose(f13);
 
@@ -2673,7 +2657,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f14 == NULL)
                             {
-                                printf("ERRO14\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2789,42 +2773,40 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento14,j14);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento14,j14); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento14,j14); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f14 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento14,j14);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento14,j14); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento14,j14); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f14);
 
                         
-
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
 
 
                     count_p++;
                     break;
                 case 15:
-                    
 
                             f15 = fopen(caminho_principal,"r");
                             printf("%s\n",caminho_principal);
 
                             if(f15 == NULL)
                             {
-                                printf("ERRO5\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -2940,28 +2922,28 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento15,j15);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento15,j15); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento15,j15); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f15 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento15,j15);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento15,j15); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento15,j15); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
+
                             fclose(f15);
 
                         
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
 
 
@@ -2974,7 +2956,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f16 == NULL)
                             {
-                                printf("ERRO16\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -3090,30 +3072,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento16,j16);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento16,j16); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento16,j16); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f16 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                                            
+                                valor_max_min_equipamento(&Valores_Equipamento16,j16);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento16,j16); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento16,j16); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
                             fclose(f16);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
-
-
 
 
                     count_p++;
@@ -3125,7 +3101,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f17 == NULL)
                             {
-                                printf("ERRO17\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
 
 
@@ -3241,23 +3217,22 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento17,j17);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento17,j17); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento17,j17); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f17 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento17,j17);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento17,j17); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento17,j17); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f17);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -3272,7 +3247,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f18 == NULL)
                             {
-                                printf("ERRO18\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -3388,31 +3363,26 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento18,j18);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento18,j18); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento18,j18); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f18 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento18,j18);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento18,j18); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento18,j18); // armazena min diario em aux
+
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f18);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
-
-
-
 
                     count_p++;
                     break;
@@ -3424,7 +3394,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f19 == NULL)
                             {
-                                printf("ERRO19\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -3540,30 +3510,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento19,j19);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento19,j19); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento19,j19); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f19 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento19,j19);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento19,j19); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento19,j19); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
                             fclose(f19);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
-
-
 
                     count_p++;
                     break;
@@ -3574,7 +3538,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f20 == NULL)
                             {
-                                printf("ERRO20\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -3690,27 +3654,26 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento20,j20);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento20,j20); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento20,j20); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f20 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                                            
+                                valor_max_min_equipamento(&Valores_Equipamento20,j20);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento20,j20); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento20,j20); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f20);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
 
                     count_p++;
@@ -3722,7 +3685,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f21 == NULL)
                             {
-                                printf("ERRO21\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -3838,28 +3801,25 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento21,j21);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento21,j21); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento21,j21); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f21 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento21,j21);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento21,j21); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento21,j21); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f21);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
                     count_p++;
                     break;
@@ -3870,7 +3830,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f22 == NULL)
                             {
-                                printf("ERRO22\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
 
 
@@ -3986,23 +3946,21 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento22,j22);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento22,j22); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento22,j22); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f22 !=  NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento22,j22);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento22,j22); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento22,j22); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+                             
+
                             fclose(f22);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -4017,7 +3975,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f23 == NULL)
                             {
-                                printf("ERRO23\n");
+                                printf("ERRO: arquivo encontrado!\n");
                             }
 
 
@@ -4133,28 +4091,25 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento23,j23);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento23,j23); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento23,j23); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f23 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento23,j23);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento23,j23); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento23,j23); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
                             fclose(f23);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
                     count_p++;
                     break;
@@ -4165,7 +4120,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f24 == NULL)
                             {
-                                printf("ERRO24\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
 
 
@@ -4281,27 +4236,22 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento24,j24);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento24,j24); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento24,j24); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f24 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento24,j24);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento24,j24); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento24,j24); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
                             fclose(f24);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
 
                     count_p++;
@@ -4313,9 +4263,8 @@ register int z; // faz controle do dia atual do mes
 
                             if(f25 == NULL)
                             {
-                                printf("ERRO25\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
-
 
                             while((ch25=fgetc(f25)) != EOF)
                             {
@@ -4429,27 +4378,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento25,j25);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento25,j25); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento25,j25); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f25 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento25,j25);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento25,j25); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento25,j25); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
                             fclose(f25);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
                     count_p++;
                     break;
@@ -4460,7 +4406,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f26 == NULL)
                             {
-                                printf("ERRO26\n");
+                                printf("ERRO: arquivo nao encontrado\n");
                             }
 
 
@@ -4576,24 +4522,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento26,j26);
 
-                            maximum_aux = maximo_mensal(&Valores_Equipamento26,j26); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento26,j26); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f26 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento26,j26);
+
+                                maximum_aux = maximo_mensal(&Valores_Equipamento26,j26); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento26,j26); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f26);
-
                         
-
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
 
@@ -4607,7 +4553,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f27 == NULL)
                             {
-                                printf("ERRO27\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -4723,23 +4669,23 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento27,j27);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento27,j27); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento27,j27); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f27 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento27,j27);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento27,j27); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento27,j27); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f27);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -4753,7 +4699,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f28 == NULL)
                             {
-                                printf("ERRO28\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -4869,27 +4815,26 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento28,j28);
+                            if(f28 != NULL)
+                            {   
+                                                            
+                                valor_max_min_equipamento(&Valores_Equipamento28,j28);
 
-                            maximum_aux = maximo_mensal(&Valores_Equipamento28,j28); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento28,j28); // armazena min diario em aux
+                                maximum_aux = maximo_mensal(&Valores_Equipamento28,j28); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento28,j28); // armazena min diario em aux
 
-                            if(maximum_aux > maximum)
-                            {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f28);
 
                         
-
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
 
                     count_p++;
@@ -4901,7 +4846,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f29 == NULL)
                             {
-                                printf("ERRO29\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -5017,22 +4962,21 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento29,j29);
-                            maximum_aux = maximo_mensal(&Valores_Equipamento29,j29); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento29,j29); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f29 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                
+                                valor_max_min_equipamento(&Valores_Equipamento29,j29);
+                                maximum_aux = maximo_mensal(&Valores_Equipamento29,j29); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento29,j29); // armazena min diario em aux
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+
+                            } // end if
+
+
                             fclose(f29);
-
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
@@ -5047,7 +4991,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f30 == NULL)
                             {
-                                printf("ERRO30\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -5163,28 +5107,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento30,j30);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento30,j30); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento30,j30); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f30 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento30,j30);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento30,j30); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento30,j30); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+
                             fclose(f30);
 
-                        
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
-
 
                     count_p++;
                     break;
@@ -5195,7 +5135,7 @@ register int z; // faz controle do dia atual do mes
 
                             if(f31 == NULL)
                             {
-                                printf("ERRO31\n");
+                                printf("ERRO: arquivo nao encontrado!\n");
                             }
 
 
@@ -5311,27 +5251,24 @@ register int z; // faz controle do dia atual do mes
 
                             } // end while de EOF
 
-                            valor_max_min_equipamento(&Valores_Equipamento31,j31);
-
-                            maximum_aux = maximo_mensal(&Valores_Equipamento31,j31); // armazena max diario em aux 
-                            minimum_aux = minimo_mensal(&Valores_Equipamento31,j31); // armazena min diario em aux
-
-                            if(maximum_aux > maximum)
+                            if(f31 != NULL)
                             {
-                                maximum = maximum_aux; // novo valor de maximum caso if verdadeiro
-                            }
+                                valor_max_min_equipamento(&Valores_Equipamento31,j31);
 
-                            if(minimum_aux < minimum)
-                            {
-                                minimum = minimum_aux; // novo valor de minimo caso if verdadeiro 
-                            }
+                                maximum_aux = maximo_mensal(&Valores_Equipamento31,j31); // armazena max diario em aux 
+                                minimum_aux = minimo_mensal(&Valores_Equipamento31,j31); // armazena min diario em aux
+
+                                (maximum_aux > maximum) ? (maximum = maximum_aux) : (maximum = maximum);
+
+                                (minimum_aux < minimum) ? (minimum = minimum_aux) : (minimum = minimum);
+                            } // end if
+
+  
                             fclose(f31);
-
-                        
+                     
 
                             memset(dia_string,'\0',tamanho_dia_string); // reseta string dia_string
                             memset(caminho_principal+tamanho_caminho_mes,'\0',tamanho_caminho_mes); // resetando dia no caminho principal
-
 
                     count_p++;
                     break;
@@ -5339,10 +5276,8 @@ register int z; // faz controle do dia atual do mes
                 } // end switch
 
   
-
                 
             } // end for dias
-
             
 
             printf("\n\n\n Maximo mensal: %f\n",maximum);
