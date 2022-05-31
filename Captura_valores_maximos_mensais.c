@@ -277,7 +277,7 @@ main()
            Equipamento_guardando30[tam_caract],
            Equipamento_guardando31[tam_caract];
 
-     char  Equipamento_interesse[tam_caract] = "AB_LTBIG_MW"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
+    // char  Equipamento_interesse[tam_caract] = "AB_LTBIG_MW"; // Equipamento que estou encontrando no arquivo, é sempre comparado com Equipamento_guardando
     // posso passar esse Equipamento em modo de leitura do teclado posteriormente. Entrada mais flexivel...
      
 
@@ -452,6 +452,8 @@ int avaliacao_ano = 0;
 
 register int z; // faz controle do dia atual do mes
 
+    char  Equipamento_interesse[20];
+
 
     printf("Insira o ano completo com 4 algarismos: ");
     gets(ano_completo);
@@ -459,8 +461,13 @@ register int z; // faz controle do dia atual do mes
     printf("Insira somente os dois ultimos algarismos do ano: ");
     gets(ano_dois_algarismos);
 
+    printf("Insira o que deseja procurar: ");
+    gets(Equipamento_interesse);
+
     printf("Insira o mes desejado: ");
     scanf("%d",&mes_int);
+
+
 
 
     /* =====================================================================*/
